@@ -1,0 +1,14 @@
+C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\bin\Debug\net8.0\Metodoapp.exe
+C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\bin\Debug\net8.0\Metodoapp.deps.json
+C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\bin\Debug\net8.0\Metodoapp.runtimeconfig.json
+C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\bin\Debug\net8.0\Metodoapp.dll
+C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\bin\Debug\net8.0\Metodoapp.pdb
+C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\obj\Debug\net8.0\Metodoapp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\obj\Debug\net8.0\Metodoapp.AssemblyInfoInputs.cache
+C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\obj\Debug\net8.0\Metodoapp.AssemblyInfo.cs
+C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\obj\Debug\net8.0\Metodoapp.csproj.CoreCompileInputs.cache
+C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\obj\Debug\net8.0\Metodoapp.dll
+C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\obj\Debug\net8.0\refint\Metodoapp.dll
+C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\obj\Debug\net8.0\Metodoapp.pdb
+C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\obj\Debug\net8.0\Metodoapp.genruntimeconfig.cache
+C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\obj\Debug\net8.0\ref\Metodoapp.dll
