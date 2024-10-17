@@ -12,3 +12,4 @@ C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\obj\Debug\net8.0\refin
 C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\obj\Debug\net8.0\Metodoapp.pdb
 C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\obj\Debug\net8.0\Metodoapp.genruntimeconfig.cache
 C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\obj\Debug\net8.0\ref\Metodoapp.dll
+C:\Users\Thiago\Documents\Projetos\Estudos\.NET\Metodoapp\obj\Debug\net8.0\Metodoapp.sourcelink.json
