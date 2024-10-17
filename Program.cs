@@ -1,28 +1,35 @@
-﻿string[,] corporate = 
-{
-    {"Robert", "Bavin"}, {"Simon", "Bright"},
-    {"Kim", "Sinclair"}, {"Aashrita", "Kamath"},
-    {"Sarah", "Delucchi"}, {"Sinan", "Ali"}
-};
+﻿double total = 0;
+double minimumSpend = 30.00;
 
-string[,] external = 
-{
-    {"Vinnie", "Ashton"}, {"Cody", "Dysart"},
-    {"Shay", "Lawrence"}, {"Daren", "Valdes"}
-};
+double[] items = {15.97, 3.50, 12.25, 22.99, 10.98};
+double[] discounts = {0.30, 0.00, 0.10, 0.20, 0.50};
 
-string externalDomain = "hayworth.com";
 
-for (int i = 0; i < corporate.GetLength(0); i++) 
+for (int i = 0; i < items.Length; i++)
 {
-   string firstName = corporate[i, 0].Substring(0, 2);
-    string lastName = corporate[i, 1];
-    string email = $"{firstName}{lastName}@Contoso.com";
-    Console.WriteLine(email);
+    total += GetDiscountedPrice(i);
 }
 
-for (int i = 0; i < external.GetLength(0); i++) 
+if (TotalMeetsMinimum())
 {
-    string email = $"{external[i, 0]}@{externalDomain}";
-    Console.WriteLine(email);
+    total -= 5.00;
+}
+Console.WriteLine($"Total: ${FormatDecimal(total)}");
+
+
+double GetDiscountedPrice(int itemIndex)
+{
+    return items[itemIndex] * (1 - discounts[itemIndex]);
+}
+
+bool TotalMeetsMinimum()
+{
+    // Verificar se o total atende ao mínimo
+    return total >= minimumSpend;
+}
+
+string FormatDecimal(double input)
+{
+    // Formatar o double para que apenas 2 casas decimais sejam exibidas
+    return input.ToString().Substring(0, 5);
 }
