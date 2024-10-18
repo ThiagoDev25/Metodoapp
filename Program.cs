@@ -1,44 +1,57 @@
-﻿int target = 80;
-int[] coins = new int[] {5, 5, 50, 25, 25, 10, 5};
-int[,] result = TwoCoins(coins, target);
+﻿using System.Runtime.InteropServices;
+bool continuar = ShouldPlay();
+Console.WriteLine("Game VS CPU");
+Console.WriteLine("");
 
-int[,] TwoCoins(int[] coins, int target) 
+do 
 {
-    int[,] result = {{-1,-1},{-1,-1},{-1,-1},{-1,-1},{-1,-1}};
-    int count = 0;
+    Random alvo = new Random();
+    int target = alvo.Next(1,7);
+    Console.WriteLine("escolhendo numeros");
+    Thread.Sleep(2500);
+    Console.WriteLine(target);
 
-    for (int curr = 0; curr < coins.Length; curr++) 
+    Random dice = new Random();
+    int roll = dice.Next(1,7);
+    Console.WriteLine("Rolando os Dados!");
+    Thread.Sleep(2500);
+    Console.WriteLine(roll);
+
+    WinorLose(roll, target);
+
+continuar = ShouldPlay();
+Console.WriteLine("");
+} while (continuar == true);
+
+bool ShouldPlay()
+{
+    Console.WriteLine("Deseja começar novamente? S/N");
+    var resposta = Console.ReadKey().Key;
+    if (resposta == ConsoleKey.S)
     {
-        for (int next = curr + 1; next < coins.Length; next++) 
-        {
-            if (coins[curr] + coins[next] == target) 
-            {
-                result[count, 0] = curr;
-                result[count, 1] = next;
-                count++;
-            }
-            if (count == result.GetLength(0)) 
-            {
-                return result;
-            }
-        }
+        return true;
     }
-    return (count == 0) ? new int[0,0] : result;
+    else if (resposta == ConsoleKey.N)
+    {
+        return false;
+    }
+    return false;
 }
 
-if (result.Length == 0) 
+int WinorLose(int roll, int target) 
 {
-    Console.WriteLine("No two coins make change");
-} 
-else 
-{
-    Console.WriteLine("Change found at positions:");
-    for (int i = 0; i < result.GetLength(0); i++) 
+    if (roll < target)
     {
-        if (result[i,0] == -1) 
-        {
-            break;
-        }
-        Console.WriteLine($"{result[i,0]},{result[i,1]}");
+        Console.WriteLine("Infelizmente você perdeu!");
+        return target;
+    }
+    else if (roll > target)
+    {
+        Console.WriteLine("Parabéns você Ganhou!");
+        return roll;
+    }
+    else {
+        Console.WriteLine("Empate!");
+        return roll;
     }
 }
