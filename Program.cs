@@ -1,57 +1,78 @@
-﻿using System.Runtime.InteropServices;
-bool continuar = ShouldPlay();
-Console.WriteLine("Game VS CPU");
-Console.WriteLine("");
+﻿using System;
 
-do 
+/*
+- Haverá três escolas visitantes
+    - A Escola A tem seis grupos visitantes (o número padrão)
+    - A Escola B tem três grupos visitantes
+    - A Escola C tem dois grupos visitantes
+
+- Para cada escola visitante, execute as seguintes tarefas
+    - Randomize os animais
+    - Atribua os animais ao número correto de grupos
+    - Imprima o nome da escola
+    - Imprima os grupos de animais
+
+*/
+
+
+string[] pettingZoo = 
 {
-    Random alvo = new Random();
-    int target = alvo.Next(1,7);
-    Console.WriteLine("escolhendo numeros");
-    Thread.Sleep(2500);
-    Console.WriteLine(target);
+    "alpacas", "capivaras", "galinhas", "patos", "emas", "gansos", 
+    "cabras", "iguanas", "cangurus", "lêmures", "llamas", "araras", 
+    "avestruzes", "porcos", "pôneis", "coelhos", "ovelhas", "tartarugas",
+};
 
-    Random dice = new Random();
-    int roll = dice.Next(1,7);
-    Console.WriteLine("Rolando os Dados!");
-    Thread.Sleep(2500);
-    Console.WriteLine(roll);
+PlanSchoolVisit("School A");
+PlanSchoolVisit("School B", 3);
+PlanSchoolVisit("School C", 2);
 
-    WinorLose(roll, target);
-
-continuar = ShouldPlay();
-Console.WriteLine("");
-} while (continuar == true);
-
-bool ShouldPlay()
+void PlanSchoolVisit(string schoolName, int groups = 6)
 {
-    Console.WriteLine("Deseja começar novamente? S/N");
-    var resposta = Console.ReadKey().Key;
-    if (resposta == ConsoleKey.S)
-    {
-        return true;
-    }
-    else if (resposta == ConsoleKey.N)
-    {
-        return false;
-    }
-    return false;
+    RandomizeAnimals();
+    string[,] group = AssignGroup(groups);
+    Console.WriteLine(schoolName);
+    PrintGroup(group);
 }
 
-int WinorLose(int roll, int target) 
+void RandomizeAnimals()
 {
-    if (roll < target)
+    Random random = new Random();
+
+    for (int i = 0; i < pettingZoo.Length; i++)
     {
-        Console.WriteLine("Infelizmente você perdeu!");
-        return target;
+    int r = random.Next(i, pettingZoo.Length);
+
+    string temp = pettingZoo[i];
+    pettingZoo[i] = pettingZoo[r];
+    pettingZoo[r] = temp;
     }
-    else if (roll > target)
+}
+
+string[,] AssignGroup(int groups = 6) 
+{
+   string[,] result = new string[groups, pettingZoo.Length/groups];
+
+    int start = 0;
+
+    for (int i = 0; i < groups; i++) 
     {
-        Console.WriteLine("Parabéns você Ganhou!");
-        return roll;
+        for (int j = 0; j < result.GetLength(1); j++) 
+        {
+            result[i,j] = pettingZoo[start++];
+        }
     }
-    else {
-        Console.WriteLine("Empate!");
-        return roll;
+    return result;
+}
+
+void PrintGroup(string[,] group) 
+{
+    for (int i = 0; i < group.GetLength(0); i++) 
+    {
+        Console.Write($"Group {i + 1}: ");
+        for (int j = 0; j < group.GetLength(1); j++) 
+        {
+            Console.Write($"{group[i,j]}  ");
+        }
+        Console.WriteLine();
     }
 }
