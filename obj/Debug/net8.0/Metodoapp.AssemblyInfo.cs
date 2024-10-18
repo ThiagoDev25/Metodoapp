@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Metodoapp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a13a7309f9664c759499c3a32e4419c8e15f07b2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+704097e660b598a0e059248a05afb27ff0e5ddca")]
 [assembly: System.Reflection.AssemblyProductAttribute("Metodoapp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Metodoapp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
